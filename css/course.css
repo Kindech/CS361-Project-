@@ -1,0 +1,70 @@
+body {
+  font-family: "Tahoma", sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #e0e0e0;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.container {
+  width: 400px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.title h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.title p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #555;
+}
+
+th, td {
+  padding: 6px;
+  text-align: center;
+  font-size: 14px;
+}
+
+th {
+  background-color: #ddd;
+}
+
+.btn {
+  background-color: #f5f5f5;
+  border: 1px solid #aaa;
+  padding: 4px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
