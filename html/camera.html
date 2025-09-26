@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>เช็คชื่อเข้าเรียน</title>
+  <link rel="stylesheet" href="../css/camera.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-container" role="main">
+      <div class="student-info">6609650000 นายไข่เจียว ไข่ดาว</div>
+      <div class="instruction">ถ่ายรูป เพื่อเช็คชื่อ</div>
+
+      <div class="camera-frame">
+        <video id="video" autoplay playsinline></video>
+        <img id="snapshotImg" class="hidden" alt="snapshot">
+      </div>
+
+      <div class="btn-row">
+        <button id="backBtn" class="btn">ย้อนกลับ</button>
+        <button id="captureBtn" class="btn">ยืนยัน</button>
+      </div>
+
+      <div class="countdown-box">
+        <div id="countdown" class="time">00:05:00</div>
+        <div class="time-label">เวลาที่เหลือในการเช็คชื่อ</div>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="hiddenCanvas" class="hidden"></canvas>
+
+  <!-- แยก JS ออกมาเป็นไฟล์ภายนอก -->
+  <script src="../js/camera.js"></script>
+</body>
+</html>
