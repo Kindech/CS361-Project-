@@ -20,6 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startCountdown(); // เริ่มนับถอยหลัง
     }
+
+    // เชื่อม event กับฟอร์ม login
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitLogin();
+        });
+    }
 });
 
 function handleLoginAttempt(success) {
@@ -93,11 +102,13 @@ function submitLogin() {
         return;
     }
 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    // ดึงค่าจาก input ของ login.html
+    const username = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
 
-    const usernameError = document.getElementById('usernameError');
-    const passwordError = document.getElementById('passwordError');
+ // สมมติว่า error id มีใน html (ถ้าไม่มีให้เพิ่มใน html ด้วย)
+    const usernameError = document.getElementById('usernameError') || { innerText: '', classList: { add:()=>{}, remove:()=>{} } };
+    const passwordError = document.getElementById('passwordError') || { innerText: '', classList: { add:()=>{}, remove:()=>{} } };
 
     usernameError.innerText = "";
     passwordError.innerText = "";
@@ -133,6 +144,8 @@ function submitLogin() {
         return;
     }
 
+    // ตัวอย่าง: สมมติว่า login สำเร็จ ให้ redirect ไป home.html
+    // ถ้าใช้ API จริง ให้ใช้ fetch ตามเดิม แล้วเปลี่ยน window.location.href = '../html/home.html';
     fetch('https://restapi.tu.ac.th/api/v1/auth/Ad/verify', {
         method: 'POST',
         headers: {
@@ -149,14 +162,14 @@ function submitLogin() {
 
             localStorage.setItem('displayNameTH', data.displayname_th);
             localStorage.setItem('username', data.username);
-
-            window.location.href = 'form/main.html';
+            // เปลี่ยน path ไปหน้า home.html
+            window.location.href = '../html/home.html';
         } else {
             handleLoginAttempt(false);
 
         }
-        // ทำการบันทึกข้อมูลผู้ใช้ลงในตาราง students
-        saveUserToDatabase(data);
+        // ถ้ามีฟังก์ชัน saveUserToDatabase ให้เรียกต่อได้
+        if (typeof saveUserToDatabase === 'function') saveUserToDatabase(data);
     })
     .catch(error => {
         console.error('Error:', error);

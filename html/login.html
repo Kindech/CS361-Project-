@@ -16,7 +16,7 @@
             <img src="../img/Tu_check-removebg.png" alt="Logo" class="logo" />
             <h2>Login</h2>
 
-            <form id="loginForm" action="/login" method="post" novalidate>
+            <form id="loginForm" novalidate>
                 <div class="input-group">
                     <input
                         type="email"
@@ -26,6 +26,7 @@
                         autocomplete="email"
                         placeholder=" " />
                     <label for="loginEmail">Email</label>
+                    <span id="usernameError" class="error"></span>
                 </div>
 
                 <div class="input-group">
@@ -37,8 +38,10 @@
                         autocomplete="current-password"
                         placeholder=" " />
                     <label for="loginPassword">Password</label>
+                    <span id="passwordError" class="error"></span>
                 </div>
 
+                <div id="message"></div>
                 <button type="submit" class="btn">Login</button>
             </form>
         </div>
@@ -46,7 +49,7 @@
 
     <!-- พื้นหลังไดนามิก -->
     <script src="../js/bg.js" defer></script>
-    <!-- <script src="../js/login.js" defer></script> -->
+    <script src="../js/login.js" defer></script>
 
 </body>
 </html>
