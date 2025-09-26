@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const username = localStorage.getItem("username") || "";
+  const displayName = localStorage.getItem("displayNameTH") || "";
+  const h1 = document.getElementById("user-info");
+  if (h1) {
+    h1.textContent = `${username} ${displayName}`;
+  }
+});
+
+
+
 const video = document.getElementById('video');
 const snapshotImg = document.getElementById('snapshotImg');
 const captureBtn = document.getElementById('captureBtn');

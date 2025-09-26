@@ -156,12 +156,18 @@ function submitLogin() {
     })
     .then(response => response.json())
     .then(data => {
+        const displayName = data.displayname_th || "ไม่ทราบชื่อ";
         const messageElement = document.getElementById('message');
         
         if (data.status === true && data.message === 'Success') {
 
-            localStorage.setItem('displayNameTH', data.displayname_th);
-            localStorage.setItem('username', data.username);
+            if (data.status === true && data.message === 'Success') {
+                localStorage.setItem('displayNameTH', data.displayname_th);
+                localStorage.setItem('username', data.username);
+                window.location.href = '../html/home.html';
+                return; // หยุด ไม่ให้รันบรรทัด set textContent ต่อ
+              }
+              
             // เปลี่ยน path ไปหน้า home.html
             window.location.href = '../html/home.html';
         } else {
@@ -169,6 +175,8 @@ function submitLogin() {
 
         }
         // ถ้ามีฟังก์ชัน saveUserToDatabase ให้เรียกต่อได้
+        document.getElementById("user-info").textContent = `${username} ${displayName}`;
+
         if (typeof saveUserToDatabase === 'function') saveUserToDatabase(data);
     })
     .catch(error => {
