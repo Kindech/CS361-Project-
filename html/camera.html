@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../css/camera.css" />  
+  <title>เช็คชื่อเข้าเรียน (อัปโหลดรูป)</title>
+</head>
+<body>
+  <div>
+    <div id="user-info">Loading...</div>
+    <div>อัปโหลดรูปภาพ เพื่อเช็คชื่อ</div>
+
+    <!-- แจ้งเตือน/ข้อผิดพลาด -->
+    <div id="notice" style="display:none;"></div>
+
+    <!-- เลือกไฟล์รูป -->
+    <div>
+      <input id="fileInput" type="file" accept="image/*" />
+    </div>
+
+    <!-- พรีวิวรูป -->
+    <div>
+      <img id="preview" alt="preview" style="display:none; max-width:100%; height:auto;" />
+    </div>
+
+    <!-- ปุ่ม -->
+    <div>
+      <button id="backBtn" type="button">ย้อนกลับ</button>
+      <button id="confirmBtn" type="button">ยืนยัน</button>
+    </div>
+
+    <!-- นาฬิกานับถอยหลัง -->
+    <div>
+      <div id="countdown">00:05:00</div>
+      <div>เวลาที่เหลือในการเช็คชื่อ</div>
+    </div>
+  </div>
+
+  <!-- แคนวาสใช้ย่อภาพ (ซ่อนไว้) -->
+  <canvas id="workCanvas" style="display:none;"></canvas>
+
+  <script src="../js/camera.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

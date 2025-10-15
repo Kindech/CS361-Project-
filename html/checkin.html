@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>TU Check • เช็คชื่อ</title>
+  <link rel="stylesheet" href="../css/checkin.css" />  
+</head>
+<body>
+  <main class="phone" role="main" aria-label="หน้าจอเช็คชื่อ">
+    <!-- Header -->
+    <header class="header">
+      <img class="logo-img" src="../img/Tu_check-removebg.png" alt="TU Check Logo" />
+
+    </header>
+
+    <!-- Content -->
+    <section class="section">
+      <div class="label">รหัสวิชา</div>
+      <div class="value" id="courseCode">CS333/CS361</div>
+    </section>
+
+    <section class="section">
+      <div class="label">ชื่อวิชา</div>
+      <div class="value wrap" id="courseName">
+        SCALABLE INTERNET SERVICES/CLOUD-BASED SOFTWARE ARCHITECTING
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="label">อาจารย์ผู้สอน</div>
+      <div class="value" id="instructor">อาจารย์ผู้สอน: xxx xxxxx</div>
+    </section>
+
+    <section class="section">
+      <div class="timer" aria-live="polite">
+        <div class="mmss" id="mmss">05 : 00</div>
+        <div class="hint">เวลาที่เหลือในการเช็คชื่อ</div>
+        <div class="bar"><i id="progress" style="width:100%"></i></div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button class="btn" id="backBtn" type="button">ย้อนกลับ</button>
+      <button class="btn primary" id="captureBtn" type="button">ถ่ายภาพ</button>
+    </div>
+
+    <div class="home"><i>⌂</i></div>
+  </main>
+
+  <script src="../js/checkin.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TU Check - Lecturer Home</title>
+  <link rel="stylesheet" href="../css/lecturer_home.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>ผบ.ดร.รศ นายไข่ดำ จันทร์อังคาร</h1>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <!-- ตารางสอน -->
+    <section>
+      <h2 class="title">ตารางสอน</h2>
+      <div class="schedule-grid">
+        <div class="card">
+          <h3>วันจันทร์</h3>
+          <p>CS264<br>09:00 - 10:00</p>
+        </div>
+        <div class="card">
+          <h3>วันอังคาร</h3>
+          <p>CS264<br>13:00 - 15:00</p>
+        </div>
+        <div class="card">
+          <h3>วันพุธ</h3>
+          <p>CS333/361<br>09:00 - 12:00</p>
+          <p>CS264<br>13:00 - 16:00</p>
+        </div>
+        <div class="card">
+          <h3>วันพฤหัส</h3>
+          <p></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- รายวิชาที่สอน -->
+    <section>
+      <h2 class="title">รายวิชาที่สอน</h2>
+      <div class="subject-list">
+        <div class="subject-card" data-day="1" data-start="09:00" data-end="10:00">
+          <span>CS264 SOFTWARE SECURITY AND DATA PRIVACY</span>
+          <button class="btn">เช็คสถานะ</button>
+        </div>
+        <div class="subject-card" data-day="3" data-start="09:00" data-end="12:00">
+          <span>CS333/361 CLOUD-BASED SOFTWARE ARCHITECTING</span>
+          <button class="btn">เช็คสถานะ</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <button class="nav-btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="Home" />
+    </button>
+  </footer>
+
+  <script src="../js/lecturer_home.js"></script>
+</body>
+</html>

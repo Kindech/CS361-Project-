@@ -1,0 +1,140 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f8f9fa;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: #2d2d2d;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Main Container */
+.container {
+  flex: 1;
+  padding: 20px;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* ตารางเรียน */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.card {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card h3 {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* วิชาที่ลงทะเบียน */
+.subject-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subject-card {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subject-card span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* ปุ่ม */
+.btn {
+  border: none;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.btn.green {
+  background: #28a745;
+  color: white;
+}
+
+.btn.gray {
+  background: #6c757d;
+  color: white;
+}
+
+.btn.red {
+  background: #dc3545;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Footer */
+.footer {
+  background: #f1f1f1;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ddd;
+}
+
+.nav-btn {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+.nav-btn img {
+  width: 28px;
+  height: 28px;
+}
