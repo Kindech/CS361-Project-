@@ -1,79 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/course.css">
+    <meta charset="UTF-8">
+    <title>รายชื่อผู้เช็คชื่อ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/course.css">
 </head>
 <body>
-  <div class="header">
-    <h1>ผศ.ดร.รศ นายไข่ดำ จันทร์อังคาร</h1>
-  </div>
+  <div class="header">
+        <h1 id="user-info">Loading...</h1> 
+  </div>
 
-  <div class="container">
-    <div class="title">
-      <h3>รายวิชาที่สอน</h3>
-      <p>
-        CS333/CS361 <br>
-        SCALABLE INTERNET SERVICES/ <br>
-        CLOUD-BASED SOFTWARE ARCHITECTING
-      </p>
-    </div>
+  <div class="container">
+    <div class="title">
+      <h3 id="course-id-display">Loading...</h3>
+      <p id="course-name-display">Loading...</p>
+      <button class = "btn" id="export-csv-btn" style="margin-top: 10px;">Export CSV</button>
+    </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>ลำดับ</th>
-          <th>รหัสนักศึกษา</th>
-          <th>ชื่อ-สกุล</th>
-          <th>รูป</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>6609650000</td>
-          <td>นายไข่เจียว ไข่ดาว</td>
-          <td><button class="btn"><img src="https://img.icons8.com/ios-filled/50/image.png" alt="รูป"></button></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>6609650001</td>
-          <td>นายไข่ตุ๋น ไข่ต้ม</td>
-          <td><button class="btn"><img src="https://img.icons8.com/ios-filled/50/image.png" alt="รูป"></button></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>6609650002</td>
-          <td>นายไข่เจียว ไข่ไก่</td>
-          <td><button class="btn"><img src="https://img.icons8.com/ios-filled/50/image.png" alt="รูป"></button></td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>6609650003</td>
-          <td>นายอิซซี่ อินมอน</td>
-          <td><button class="btn"><img src="https://img.icons8.com/ios-filled/50/image.png" alt="รูป"></button></td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>6609650004</td>
-          <td>นางสาวนิด หน่อย</td>
-          <td><button class="btn"><img src="https://img.icons8.com/ios-filled/50/image.png" alt="รูป"></button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ลำดับ</th>
+          <th>ชื่อ-สกุล</th>           <th>สถิติ</th>
+        </tr>
+      </thead>
+      <tbody id="attendance-table-body">
+        </tbody>
+    </table>
+  </div>
 
-  <footer class="footer">
-    <button class="nav-btn">
-      <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="Home" />
-    </button>
-  </footer>
-
-    <!-- พื้นหลังไดนามิก -->
-    <script src="../js/bg.js" defer></script>
-    <!-- <script src="../js/login.js" defer></script> -->
-
+  <footer class="footer">
+        <button class="nav-btn" id="homeNavBtn">
+            <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="Home" />
+        </button>
+  </footer>
+    <script src="../js/course.js"></script>
 </body>
 </html>

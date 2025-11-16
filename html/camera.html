@@ -3,44 +3,95 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="../css/camera.css" />  
-  <title>เช็คชื่อเข้าเรียน (อัปโหลดรูป)</title>
+  <link rel="stylesheet" href="../css/camera.css" />
+  <title>เช็คชื่อเข้าเรียน</title>
+
+  <style>
+    /* (CSS เดิมจาก camera.css) */
+    .form-container { padding-bottom: 20px; }
+    .rating-section { margin-bottom: 20px; }
+    .rating-label { font-weight: 600; color: #333; margin-bottom: 10px; display: block; }
+    
+    /* ✅ CSS สำหรับดาว (ให้เป็นสีเทา และเปลี่ยนสีเมื่อเลือก) */
+    .rating {
+      display: flex;
+      flex-direction: row-reverse; /* ทำให้ดาวดวงที่ 5 อยู่ซ้ายสุด */
+      justify-content: center;
+      gap: 5px;
+    }
+    .rating input { display: none; }
+    .rating label {
+      font-size: 40px;
+      color: #ddd; /* สีเทาเริ่มต้น */
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    /* เมื่อ hover ดาว */
+    .rating label:hover,
+    .rating label:hover ~ label {
+      color: #f5c518; /* สีดาว (ทอง) */
+    }
+    /* เมื่อคลิกเลือกดาว */
+    .rating input:checked ~ label {
+      color: #f5c518;
+    }
+    
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    #notice {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <div>
+  <div class="form-container" style="max-width: 420px; margin: 20px;">
     <div id="user-info">Loading...</div>
-    <div>อัปโหลดรูปภาพ เพื่อเช็คชื่อ</div>
+    <div class="instruction">อัปโหลดรูปภาพ และให้ฟีดแบ็กเพื่อเช็คชื่อ</div>
 
-    <!-- แจ้งเตือน/ข้อผิดพลาด -->
-    <div id="notice" style="display:none;"></div>
+    <div class="rating-section">
+      <label class="rating-label">คุณเข้าใจเนื้อหาในคาบนี้?</label>
+      <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5" /><label for="star5">★</label>
+        <input type="radio" id="star4" name="rating" value="4" /><label for="star4">★</label>
+        <input type="radio" id="star3" name="rating" value="3" /><label for="star3">★</label>
+        <input type="radio" id="star2" name="rating" value="2" /><label for="star2">★</label>
+        <input type="radio" id="star1" name="rating" value="1" /><label for="star1">★</label>
+      </div>
+    </div>
+    
+    <div class="comment-section">
+       <label class="rating-label">ความคิดเห็น (ไม่บังคับ)</label>
+       <textarea id="comment" placeholder="สิ่งที่คุณรู้สึก หรืออยากให้อาจารย์ปรับปรุง..."></textarea>
+    </div>
 
-    <!-- เลือกไฟล์รูป -->
-    <div>
+    <div style="margin-top: 20px;">
+      <label class="rating-label">อัปโหลดรูปภาพยืนยัน</label>
       <input id="fileInput" type="file" accept="image/*" />
     </div>
-
-    <!-- พรีวิวรูป -->
     <div>
-      <img id="preview" alt="preview" style="display:none; max-width:100%; height:auto;" />
+      <img id="preview" alt="preview" style="display:none; max-width:100%; height:auto; border-radius: 8px;" />
     </div>
 
-    <!-- ปุ่ม -->
-    <div>
+    <div id="notice" style="display:none;"></div>
+
+    <div class="btn-row" style="margin-top: 20px;">
       <button id="backBtn" type="button">ย้อนกลับ</button>
       <button id="confirmBtn" type="button">ยืนยัน</button>
     </div>
 
-    <!-- นาฬิกานับถอยหลัง -->
-    <div>
-      <div id="countdown">00:05:00</div>
-      <div>เวลาที่เหลือในการเช็คชื่อ</div>
     </div>
-  </div>
 
-  <!-- แคนวาสใช้ย่อภาพ (ซ่อนไว้) -->
   <canvas id="workCanvas" style="display:none;"></canvas>
-
   <script src="../js/camera.js"></script>
-  <script src="../js/login.js"></script>
 </body>
 </html>

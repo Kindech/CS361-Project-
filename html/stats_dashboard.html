@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>สถิติการเข้าเรียน</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/course.css">
+  <style>
+    /* เพิ่ม CSS สำหรับสถานะ เข้า/ขาด */
+    .table-success { background-color: #e6ffed; }
+    .table-danger { background-color: #ffebee; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 id="stats-course-title">Loading...</h2>
+    <p id="stats-user-info">สำหรับ: <span id="user-display">Loading...</span></p>
+    
+    <hr>
+
+    <h3>สรุปภาพรวมการเข้าเรียน</h3>
+    <div style="display: flex; gap: 20px; align-items: center;">
+        <div style="width: 200px; height: 200px;">
+            <canvas id="attendanceChart"></canvas>
+        </div>
+        <div>
+            <p>คาบเรียนทั้งหมด: <span id="total-sessions">N/A</span></p>
+            <p>เข้าเรียนแล้ว: <span id="attended-count">N/A</span></p>
+            <p>เปอร์เซ็นต์เข้าเรียน: <span id="percent-attended">N/A</span>%</p>
+        </div>
+    </div>
+
+    <hr style="margin-top: 30px;">
+
+        <h3>ประวัติการเข้าเรียน (ตามคาบเรียน)</h3>
+    <table id="full-history-table" style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th>คาบที่</th>
+                <th>สถานะ</th>
+                <th>เวลาที่เช็คชื่อ</th>
+                <th>รูปภาพ</th>
+                <th>คะแนน (1-5)</th> <th>คอมเมนต์</th> <th>จัดการ (ลบ)
+            </tr>
+        </thead>
+        <tbody>
+                    </tbody>
+    </table>
+    
+    <button id="backBtn" onclick="window.history.back()" style="margin-top: 20px;">ย้อนกลับ</button>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="../js/stats.js"></script>
+</body>
+</html>
